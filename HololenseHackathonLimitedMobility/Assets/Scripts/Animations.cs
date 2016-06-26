@@ -8,6 +8,7 @@ public class Animations : MonoBehaviour
     public int delay = 0;
     public string nameAnim;
     bool isPlaying = false;
+    public bool buttonpressed = false;
 
     void Start()
     {
@@ -24,7 +25,10 @@ public class Animations : MonoBehaviour
         // done waiting... now update the playing flag to go for the next animation.
         isPlaying = false;
     }
-
+    public void buttonPress()
+    {
+        buttonpressed = true;
+    }
     void Update()
     {
         if (!isPlaying)  // nothing playing? let's play something...
@@ -45,11 +49,14 @@ public class Animations : MonoBehaviour
                     delay = 2;
                     break;
                 case 2:
+                    if (!buttonpressed)
+                        return;
                     nameAnim = "AlertUp";
                     delay = 2;
                     break;
                 case 3:
-                    //nameAnim = "AlertDownStop";
+                    //nameAnim = "AlertUpMove";
+                    nameAnim = null;
                     delay = 2;
                     break;
                  case 4:

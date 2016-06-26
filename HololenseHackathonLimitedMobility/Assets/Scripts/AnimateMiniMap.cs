@@ -8,6 +8,7 @@ public class AnimateMiniMap : MonoBehaviour
     public int delay = 0;
     public string nameAnim;
     bool isPlaying = false;
+    public bool buttonpressed = false;
 
     void Start()
     {
@@ -25,6 +26,12 @@ public class AnimateMiniMap : MonoBehaviour
         isPlaying = false;
     }
 
+    public void buttonPress() {
+        buttonpressed = true;
+    }
+
+
+   
     void Update()
     {
         if (!isPlaying)  // nothing playing? let's play something...
@@ -37,16 +44,18 @@ public class AnimateMiniMap : MonoBehaviour
             switch (animId)
             {
                 case 0:
-                    nameAnim = null;
-                    delay = 5;
+                    if (!buttonpressed)
+                        return;
+                    delay = 0;
                     break;
                 case 1:
                     nameAnim = "Minimap";
                     delay = 2;
                     break;
                 case 2:
-                    nameAnim = "MiniMapStay";
-                    delay = 2;
+                    // nameAnim = "MiniMapStay";
+                    nameAnim = null;
+                    delay = 0;
                     break;
                 case 3:
                     nameAnim = "MinimapGo";
