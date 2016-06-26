@@ -93,6 +93,7 @@
      <Compile Include="Assets\Scripts\ButtonActions.cs" />
      <Compile Include="Assets\Scripts\Default.cs" />
      <Compile Include="Assets\Scripts\MinimapCamera.cs" />
+     <Compile Include="Assets\UIAnimation.cs" />
      <None Include="Assets\JMO Assets\MatCap Shaders\Shaders\MatCap_TextureAdd_Bumped.shader" />
      <None Include="Assets\JMO Assets\MatCap Shaders\Shaders\MatCap_TextureMult_Bumped.shader" />
      <None Include="Assets\Jiggly Bubble Free\readme_Jiggly_Bubble_Free.txt" />
