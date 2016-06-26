@@ -68,13 +68,14 @@ public class AnimateMiniMap : MonoBehaviour
 
             animId++;
             isPlaying = true;
-
+            /*
             if (nameAnim != null)
             {
                 anim.Play(nameAnim);
             }
             // now wait for the anim to finish plus 2 seconds more.
             StartCoroutine(LetsWait(delay));
+            */
         }
     }
 }
