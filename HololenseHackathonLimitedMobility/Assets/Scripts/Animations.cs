@@ -3,17 +3,18 @@ using System.Collections;
 
 public class Animations : MonoBehaviour
 {
-    Animator anim;
-    int script1 = Animator.StringToHash("AlertIn");
-    int script2 = Animator.StringToHash("AlertUp");
-    int script3 = Animator.StringToHash("AlertDownStop");
-    int script4 = Animator.StringToHash("AlertUpMove");
+    public Animation anim;
     int animId = 0;
-    int delay = 0;
+    public int delay = 0;
+    public string nameAnim;
     bool isPlaying = false;
+
     void Start()
     {
-        anim = GetComponent<Animator>();
+        if (this.anim == null)
+        {
+            anim = GetComponent<Animation>();
+        }
     }
 
     IEnumerator LetsWait(float secsToWait)
@@ -24,12 +25,14 @@ public class Animations : MonoBehaviour
         isPlaying = false;
     }
 
-
-        void Update()
+    void Update()
     {
         if (!isPlaying)  // nothing playing? let's play something...
         {
-            string nameAnim;
+            if (anim.isPlaying)
+            {
+                return;
+            }
 
             switch (animId)
             {
@@ -46,7 +49,7 @@ public class Animations : MonoBehaviour
                     delay = 2;
                     break;
                 case 3:
-                    nameAnim = "AlertDownWait";
+                    //nameAnim = "AlertDownStop";
                     delay = 2;
                     break;
                  case 4:
@@ -57,15 +60,16 @@ public class Animations : MonoBehaviour
                     isPlaying = true;
                     return;
             }
+
             animId++;
             isPlaying = true;
+
             if (nameAnim != null)
             {
-                int hash = Animator.StringToHash(nameAnim);
-                anim.SetTrigger(hash);
+                anim.Play(nameAnim);
             }
             // now wait for the anim to finish plus 2 seconds more.
             StartCoroutine(LetsWait(delay));
-            }
+        }
     }
 }
