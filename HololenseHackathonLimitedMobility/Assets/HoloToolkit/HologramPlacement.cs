@@ -20,15 +20,23 @@ public class HologramPlacement : Singleton<HologramPlacement> {
 
     void Update() {
         if (!GotTransform) {
-            transform.position = Vector3.Lerp(transform.position, ProposeTransformPosition(), 0.2f);
+            var headPosition = Camera.main.transform.position;
+            var gazeDirection = Camera.main.transform.forward;
+
+            RaycastHit hitInfo;
+            if (Physics.Raycast(headPosition, gazeDirection, out hitInfo,
+                30.0f, SpatialMappingManager.Instance.LayerMask)) {
+                // Move this object's parent object to
+                // where the raycast hit the Spatial Mapping mesh.
+                transform.position = hitInfo.point;
+
+                // Rotate this object's parent object to face the user.
+                Quaternion toQuat = Camera.main.transform.localRotation;
+                toQuat.x = 0;
+                toQuat.z = 0;
+                transform.rotation = toQuat;
+            }
         }
-    }
-
-    Vector3 ProposeTransformPosition() {
-        // Put the model 2m in front of the user.
-        Vector3 retval = Camera.main.transform.position + Camera.main.transform.forward * 2;
-
-        return retval;
     }
 
     public void OnSelect() {
@@ -38,6 +46,8 @@ public class HologramPlacement : Singleton<HologramPlacement> {
         // The user has now placed the hologram.
         // Route input to gazed at holograms.
         GestureManager.Instance.OverrideFocusedObject = null;
+
+        
 
         Instantiate(mapObj, transform.position, transform.rotation);
         Destroy(this);
