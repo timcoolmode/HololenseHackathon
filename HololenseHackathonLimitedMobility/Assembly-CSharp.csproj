@@ -45,9 +45,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\HoloToolkit\GazeManager.cs" />
+     <Compile Include="Assets\HoloToolkit\GestureManager.cs" />
+     <Compile Include="Assets\HoloToolkit\HologramPlacement.cs" />
+     <Compile Include="Assets\HoloToolkit\Singleton.cs" />
      <Compile Include="Assets\JMO Assets\MatCap Shaders\Demo\Assets\MC_AutoRotate.cs" />
      <Compile Include="Assets\JMO Assets\MatCap Shaders\Demo\Assets\MC_SwitchTexture.cs" />
+     <Compile Include="Assets\PathAI\ExplosionControl.cs" />
+     <Compile Include="Assets\PathAI\NavPath.cs" />
      <Compile Include="Assets\Scripts\Default.cs" />
+     <Compile Include="Assets\Scripts\MinimapCamera.cs" />
      <None Include="Assets\JMO Assets\MatCap Shaders\Shaders\MatCap_TextureAdd_Bumped.shader" />
      <None Include="Assets\JMO Assets\MatCap Shaders\Shaders\MatCap_TextureMult_Bumped.shader" />
      <None Include="Assets\Jiggly Bubble Free\readme_Jiggly_Bubble_Free.txt" />
