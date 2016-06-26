@@ -45,10 +45,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\HoloToolkit\FileSurfaceObserver.cs" />
      <Compile Include="Assets\HoloToolkit\GazeManager.cs" />
      <Compile Include="Assets\HoloToolkit\GestureManager.cs" />
      <Compile Include="Assets\HoloToolkit\HologramPlacement.cs" />
+     <Compile Include="Assets\HoloToolkit\MeshSaver.cs" />
+     <Compile Include="Assets\HoloToolkit\PlaneFinding.cs" />
+     <Compile Include="Assets\HoloToolkit\RemoteMappingManager.cs" />
+     <Compile Include="Assets\HoloToolkit\RemoteMeshSource.cs" />
+     <Compile Include="Assets\HoloToolkit\RemoteMeshTarget.cs" />
+     <Compile Include="Assets\HoloToolkit\RemoveSurfaceVertices.cs" />
+     <Compile Include="Assets\HoloToolkit\SimpleMeshSerializer.cs" />
      <Compile Include="Assets\HoloToolkit\Singleton.cs" />
+     <Compile Include="Assets\HoloToolkit\SpatialMappingComponent\SpatialMappingCollider.cs" />
+     <Compile Include="Assets\HoloToolkit\SpatialMappingComponent\SpatialMappingRenderer.cs" />
+     <Compile Include="Assets\HoloToolkit\SpatialMappingComponent\Support\SMBaseAbstract.cs" />
+     <Compile Include="Assets\HoloToolkit\SpatialMappingManager.cs" />
+     <Compile Include="Assets\HoloToolkit\SpatialMappingObserver.cs" />
+     <Compile Include="Assets\HoloToolkit\SpatialMappingSource.cs" />
+     <Compile Include="Assets\HoloToolkit\SurfaceMeshesToPlanes.cs" />
+     <Compile Include="Assets\HoloToolkit\SurfacePlane.cs" />
+     <Compile Include="Assets\HoloToolkit\TapToPlace.cs" />
      <Compile Include="Assets\JMO Assets\MatCap Shaders\Demo\Assets\MC_AutoRotate.cs" />
      <Compile Include="Assets\JMO Assets\MatCap Shaders\Demo\Assets\MC_SwitchTexture.cs" />
      <Compile Include="Assets\PathAI\ExplosionControl.cs" />
@@ -62,6 +79,7 @@
      <None Include="Assets\JMO Assets\MatCap Shaders\Shaders\MatCap_Plain_Bumped.shader" />
      <None Include="Assets\JMO Assets\MatCap Shaders\Shaders\MatCap_Plain_AdditiveZ.shader" />
      <None Include="Assets\JMO Assets\!JMO Assets Readme.txt" />
+     <None Include="Assets\HoloToolkit\Wireframe.shader" />
      <None Include="Assets\JMO Assets\MatCap Shaders\Shaders\MatCap_Plain.shader" />
      <None Include="Assets\JMO Assets\MatCap Shaders\Shaders\MatCap_Plain_Additive.shader" />
      <None Include="Assets\JMO Assets\MatCap Shaders\Shaders\MatCap_TextureMult.shader" />
