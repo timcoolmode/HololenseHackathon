@@ -5,7 +5,7 @@ public class Animations : MonoBehaviour
 {
     public Animation anim;
     int animId = 0;
-    public int delay = 0;
+    public float delay = 0;
     public string nameAnim;
     bool isPlaying = false;
     public bool buttonpressed = false;
@@ -42,25 +42,22 @@ public class Animations : MonoBehaviour
             {
                 case 0:
                     nameAnim = null;
-                    delay = 8;
+                    delay = 10;
                     break;
                 case 1:
                     nameAnim = "AlertIn";
-                    delay = 2;
+                    delay = 1;
                     break;
                 case 2:
-                    if (!buttonpressed)
-                        return;
-                    nameAnim = "AlertUp";
-                    delay = 2;
-                    break;
-                case 3:
-                    //nameAnim = "AlertUpMove";
+                    //nameAnim = "AlertDownStop";
                     nameAnim = null;
                     delay = 2;
                     break;
-                 case 4:
+                case 3:
+                    if (!buttonpressed)
+                        return;
                     nameAnim = "AlertUpMove";
+                    //nameAnim = null;
                     delay = 2;
                     break;
                 default:
